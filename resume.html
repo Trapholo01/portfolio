@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thato Rapholo - Resume</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 0; }
+            .no-print { display: none; }
+            .page-break { page-break-after: always; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #2d3748;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .header .title {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4a5568;
+            text-align: justify;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .skill-category li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #4a5568;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .skill-category li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .cert-item, .project-item, .experience-item {
+            margin-bottom: 20px;
+        }
+        
+        .cert-item h3, .project-item h3, .experience-item h3 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .cert-meta, .project-meta, .experience-meta {
+            font-size: 14px;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .cert-item p, .project-item p, .experience-item p {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .project-item ul, .experience-item ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+        
+        .project-item li, .experience-item li {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background: #edf2f7;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        .achievements li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #5568d3;
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="download-btn no-print" onclick="window.print(); return false;">📄 Download PDF</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>THATO RAPHOLO</h1>
+            <div class="title">Cloud & DevOps Engineer</div>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:rapholothato3@gmail.com">rapholothato3@gmail.com</a></span>
+                <span>|</span>
+                <span>📍 Pretoria, South Africa</span>
+                <span>|</span>
+                <span>🔗 <a href="https://linkedin.com/in/thato-rapholo" target="_blank">LinkedIn</a></span>
+                <span>|</span>
+                <span>💻 <a href="https://github.com/Trapholo01" target="_blank">GitHub</a></span>
+                <span>|</span>
+                <span>🌐 <a href="https://trapholo01.github.io/portfolio/" target="_blank">Portfolio</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Motivated Cloud Engineer transitioning from education to cloud infrastructure with strong foundations in AWS, Azure, and DevOps practices. Currently enrolled in CAPACITI's intensive Cloud & DevOps training program. Demonstrated ability to learn quickly, solve complex problems systematically, and communicate technical concepts clearly. Possess 5 industry-recognized certifications and hands-on experience building scalable cloud solutions. Bringing unique perspective from education background: structured thinking, user-centered design approach, and ability to explain complex technical concepts accessibly.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <ul>
+                        <li>AWS: EC2, S3, VPC, Lambda, CloudFront</li>
+                        <li>AWS: Route 53, RDS, IAM, CloudWatch</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Microsoft Azure</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <ul>
+                        <li>Docker, Kubernetes</li>
+                        <li>Terraform, Infrastructure as Code</li>
+                        <li>CI/CD: GitHub Actions, CodePipeline</li>
+                        <li>Git, GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <ul>
+                        <li>Python: Automation, AWS SDK</li>
+                        <li>Bash: Shell scripting</li>
+                        <li>YAML: Configuration management</li>
+                        <li>HTML/CSS/JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Cloud architecture design</li>
+                        <li>Infrastructure automation</li>
+                        <li>Technical documentation</li>
+                        <li>Problem-solving & troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-item">
+                <h3>AWS Certified DevOps Engineer – Code, Build, and Test</h3>
+                <div class="cert-meta">Amazon Web Services | 2025</div>
+            </div>
+            <div class="cert-item">
+                <h3>AWS Certified Cloud Practitioner – Essentials</h3>
+                <div class="cert-meta">Amazon Web Services | 2025</div>
+            </div>
+            <div class="cert-item">
+                <h3>Google Cloud: Introduction to Generative AI</h3>
+                <div class="cert-meta">Google Cloud | 2025</div>
+            </div>
+            <div class="cert-item">
+                <h3>Microsoft Power Platform Fundamentals</h3>
+                <div class="cert-meta">Microsoft | 2025</div>
+            </div>
+            <div class="cert-item">
+                <h3>Google Analytics Certification</h3>
+                <div class="cert-meta">Google | 2025</div>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <h2 class="section-title">Cloud Projects</h2>
+            
+            <div class="project-item">
+                <h3>Portfolio Website</h3>
+                <div class="project-meta">Live: trapholo01.github.io/portfolio | GitHub: github.com/Trapholo01/portfolio</div>
+                <ul>
+                    <li>Built and deployed responsive portfolio website showcasing cloud engineering journey</li>
+                    <li>Implemented modern web design with HTML5, CSS3, and JavaScript</li>
+                    <li>Deployed using GitHub Pages with custom configuration</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">GitHub Pages</span>
+                </div>
+            </div>
+ <div class="project-item">
+                <h3>AWS Portfolio Website Deployment</h3>
+                <div class="project-meta">Live: http://thato-portfolio-website.s3-website.eu-north-1.amazonaws.com/ | GitHub: github.com/Trapholo01/aws-portfolio-deployment</div>
+                <ul>
+                    <li>Built and deployed a responsive portfolio website using AWS S3 static website hosting</li>
+                    <li>Configured S3 bucket for public access with secure JSON-based bucket policies</li>
+                    <li>Managed permissions, encryption, and access control using IAM</li>
+                    <li>Selected EU (Stockholm) region to optimize performance and latency</li>
+                    <li>Managed encryption, permissions, and security configurations</li>
+                    <li>Achieved zero-cost hosting using the AWS Free Tier</li>
+                    <li>Designed a scalable cloud architecture roadmap (S3 → CloudFront → WAF)</li>
+                 </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">IAM</span>
+                    <span class="tech-tag">Bucket Policies</span>
+                    <span class="tech-tag">Static Website Hosting</span>
+                    <span class="tech-tag">JSON</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3>AWS Infrastructure Labs</h3>
+                <div class="project-meta">In Progress</div>
+                <ul>
+                    <li>Designing and implementing scalable VPC architecture with Terraform</li>
+                    <li>Building multi-tier web application with auto-scaling and load balancing</li>
+                    <li>Implementing security best practices and high availability patterns</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Terraform</span>
+                    <span class="tech-tag">VPC</span>
+                    <span class="tech-tag">EC2</span>
+                    <span class="tech-tag">IaC</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>CI/CD Pipeline Demo</h3>
+                <div class="project-meta">Planned</div>
+                <ul>
+                    <li>Automated deployment pipeline with GitHub Actions</li>
+                    <li>Docker containerization for consistent environments</li>
+                    <li>Cloud deployment automation to AWS ECS</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">GitHub Actions</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS ECS</span>
+                    <span class="tech-tag">CI/CD</span>
+                </div>
+            </div>
+           
+
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Cloud & DevOps Engineer in Training</h3>
+                <div class="experience-meta">CAPACITI | 2025 - Present</div>
+                <ul>
+                    <li>Completing intensive training in AWS, Azure, GCP, Docker, Kubernetes, and Terraform</li>
+                    <li>Building hands-on experience with cloud infrastructure, automation, and DevOps practices</li>
+                    <li>Earned 5 industry-recognized certifications in cloud technologies</li>
+                    <li>Developing portfolio of real-world cloud projects demonstrating practical skills</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Education Professional</h3>
+                <div class="experience-meta">STADIO Higher Education | 2022 - 2025</div>
+                <ul>
+                    <li>Developed strong communication skills explaining complex concepts to diverse audiences</li>
+                    <li>Created structured learning programs and systematic problem-solving approaches</li>
+                    <li>Managed multiple projects simultaneously with attention to detail</li>
+                    <li>Built user-centered solutions focused on accessibility and effectiveness</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Achievements</h2>
+            <ul class="achievements">
+                <li>Transitioned from education to cloud engineering in under 6 months</li>
+                <li>Earned 5 cloud certifications while building practical portfolio</li>
+                <li>Built and deployed live portfolio website using modern web technologies</li>
+                <li>Completed AWS DevOps certification demonstrating advanced cloud knowledge</li>
+                <li>Developed strong foundation in multiple cloud platforms (AWS, Azure, GCP)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education & Professional Development</h2>
+            <div class="experience-item">
+                <h3>Cloud & DevOps Engineering Program</h3>
+                <div class="experience-meta">CAPACITI | 2025 - Present</div>
+                <p>Intensive training in AWS, Azure, GCP, Docker, Kubernetes, Terraform, and CI/CD practices</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 16px; color: #2d3748; margin-bottom: 10px;">Currently Learning</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Kubernetes Administration</span>
+                    <span class="tech-tag">Advanced Terraform</span>
+                    <span class="tech-tag">CI/CD Pipelines</span>
+                    <span class="tech-tag">Python for DevOps</span>
+                    <span class="tech-tag">AWS Solutions Architect</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <p style="font-size: 14px; color: #4a5568; margin-bottom: 10px;"><strong>Availability:</strong> Immediately available for entry-level Cloud Engineer or DevOps roles</p>
+            <p style="font-size: 14px; color: #4a5568; margin-bottom: 10px;"><strong>Work Authorization:</strong> Authorized to work in South Africa</p>
+            <p style="font-size: 14px; color: #4a5568;"><strong>Preferred Locations:</strong> Pretoria, Johannesburg, or Remote</p>
+        </div>
+    </div>
+</body>
+</html>
