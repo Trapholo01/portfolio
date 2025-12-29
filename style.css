@@ -450,6 +450,17 @@ section {
     color: white;
 }
 
+.cert-icon.cloud {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cert-icon.atlassian {
+    background: linear-gradient(135deg, #0052CC 0%, #2684FF 100%);
+}
+
+.cert-icon.git {
+    background: linear-gradient(135deg, #F05032 0%, #F34F29 100%);
+}
 .cert-card h3 {
     color: var(--text-color);
     margin-bottom: 0.5rem;
